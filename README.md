@@ -1,6 +1,6 @@
 # Auth SSO
 
-Unified CEE system for authentication and authorization.
+Unified system for authentication and authorization.
 
 
 ## Environment details
