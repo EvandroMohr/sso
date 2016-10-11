@@ -1,0 +1,23 @@
+{
+    "name": "A",
+    "authors": [
+        {
+            "name": "Evandro Mohr",
+            "email": "mohr.evandro@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Auth\\": [
+				"src/",
+				"test/"
+			]
+        }
+    },
+    "require": {
+        "lcobucci/jwt": "^3.0",
+        "slim/slim": "^2.6",
+        "phpunit/phpunit": "^4.8",
+        "guzzlehttp/guzzle": "~6.0"
+    }
+}

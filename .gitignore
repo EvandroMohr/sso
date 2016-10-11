@@ -1,0 +1,10 @@
+*~
+.project
+.buildpath
+.settings
+!/.gitignore
+
+
+/vendor/
+/.DS_Store
+
