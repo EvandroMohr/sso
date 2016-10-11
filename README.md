@@ -13,7 +13,7 @@ Unified system for authentication and authorization.
 
 Database/schema:
 
-- db_cee/adm_sso
+- db_sso/adm_sso
 
 
 ## GETTING START
