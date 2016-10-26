@@ -7,7 +7,7 @@ Unified system for authentication and authorization.
 
 ## Environment details
 
-- PHP+PDO 5.3 
+- PHP+PDO 5.5+ 
 
 ### Database details
 
@@ -38,5 +38,7 @@ Run inside project `phpunit`
 
 ### 0.1.1 - 26th Oct 2016
 
-- Travis and Code Climate adjusts
+- Travis adjusts
 - Refactoring tests
+- Define minimum PHP version
+
