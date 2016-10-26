@@ -9,6 +9,10 @@
 	<testsuites>
 		<testsuite name="Api Tests">
 			<directory>test</directory>
+
+			<ignore>
+				<exclude>test/IntegrationTest.php</exclude>
+			</ignore>
 		</testsuite>
 	</testsuites>
 </phpunit>

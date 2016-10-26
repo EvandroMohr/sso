@@ -6,9 +6,7 @@ use Lcobucci\JWT\Parser;
 use Lcobucci\JWT\Builder;
 use Lcobucci\JWT\ValidationData;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
-use Auth\Model\Entity\EntityBase;
 use Auth\Model\Entity\Usuario;
-use Auth\Model\Services\ITokenService;
 use Auth\Model\Exception\InvalidTokenException;
 
 /**
@@ -21,12 +19,17 @@ class TokenService implements ITokenService
     
     //FIXME
     private $apiKey = "6BBB0DA1891646E58EB3E6A63AF3A6FC3C8EB5A0D44824CBA581D2E14A0450CF";
-    
+
+    private $defaultTokenIssuer;
+    private $defaultTokenAudience;
+
     /**
      * Create a service for token access and validation
      */
     public function __construct()
     {
+        defined('TOKEN_ISSUER') || define('TOKEN_ISSUER', $this->defaultTokenIssuer);
+        defined('TOKEN_AUDIENCE') || define('TOKEN_AUDIENCE', $this->defaultTokenAudience);
     }
 
     /**
