@@ -2,6 +2,8 @@
 
 Unified system for authentication and authorization.
 
+[![Build Status](https://travis-ci.org/mrprompt/sso.svg?branch=master)](https://travis-ci.org/mrprompt/sso)
+
 
 ## Environment details
 
