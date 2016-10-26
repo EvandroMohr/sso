@@ -85,7 +85,6 @@ class PerfilDAO extends GenericDAO implements IPerfilDAO
         while ($row = $st->fetch()) {
             $list[] = $row;
         }
-        $connection = null;
         if ($list) {
             return $list;
         }
