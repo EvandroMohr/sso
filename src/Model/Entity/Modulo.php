@@ -2,9 +2,9 @@
 
 use Auth\Model\Entity\EntityBase;
 
-class Modulo extends EntityBase{
+class Modulo extends EntityBase
+{
 
-	public $descricao;
-	public $sistema;
-	
-} 
+    public $descricao;
+    public $sistema;
+}
