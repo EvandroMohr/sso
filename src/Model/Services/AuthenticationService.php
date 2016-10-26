@@ -1,8 +1,6 @@
 <?php namespace Auth\Model\Services;
 
-use Auth\Model\Services\IAuthenticationService;
 use Auth\Model\Factory\AppFactory;
-use Auth\Model\Services\TokenService;
 use Auth\Model\DAO\IUsuarioDAO;
 use Auth\Model\DAO\IPerfilDAO;
 

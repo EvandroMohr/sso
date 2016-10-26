@@ -1,6 +1,5 @@
-<?php namespace Auth\Model\Entity;
-
-use Auth\Model\Entity\EntityBase;
+<?php
+namespace Auth\Model\Entity;
 
 class Modulo extends EntityBase
 {

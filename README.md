@@ -31,4 +31,10 @@ Run inside project `phpunit`
 ## Changelog
 
 ### 0.1.0 - 16th Feb 2016
+
 - GIT versioning
+
+### 0.1.1 - 26th Oct 2016
+
+- Travis and Code Climate adjusts
+- Refactoring tests

@@ -44,16 +44,19 @@ class AuthController
     {
         if (!isset($_POST['user']) || !isset($_POST['passwd'])) {
             echo json_encode(array("error"=>"missing credentials"));
-            die();
+            return;
         }
+
         $username = filter_var($_POST['user'], FILTER_SANITIZE_STRING);
         $passwd = filter_var($_POST['passwd'], FILTER_SANITIZE_STRING);
+
         try {
             $token =  array("token"=>(string) $this->authenticationService->authenticate($username, $passwd));
         } catch (\Exception $e) {
             echo json_encode(array("error"=>"invalid user"));
-            die();
+            return;
         }
+
         echo json_encode($token);
     }
 
@@ -77,7 +80,7 @@ class AuthController
 
         if ($notIssetPostVars) {
             echo json_encode(array("error"=>"missing basic information"));
-            die();
+            return;
         }
 
         echo json_encode($this->authenticationService->createUser($_POST));
@@ -96,6 +99,5 @@ class AuthController
     public function getStatus()
     {
         echo "ok";
-        die();
     }
 }

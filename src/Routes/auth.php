@@ -1,6 +1,5 @@
 <?php
 
-use \Auth\Controller\AuthController;
 use Auth\Model\Services\TokenService;
 use Auth\Model\Exception\InvalidTokenException;
 
@@ -11,20 +10,21 @@ function verifyTokenBearer()
 {
     header('Content-Type: application/json');
     $tokenService = new TokenService();
+
     if (!$tokenService->hasBearerToken()) {
         echo json_encode(array("error"=>"missing token"));
-        die();
     }
+
     try {
         if (!$tokenService->isTokenValid()) {
             echo json_encode(array("error"=>"token has expired"));
-            die();
         }
     } catch (InvalidTokenException $e) {
         echo json_encode(array("error"=>"invalid token"));
-        die();
     }
 }
+
+$app = new \Slim\Slim();
 
 $app->group('/api', function () use ($app) {
     $app->response->headers->set('Content-Type', 'application/json');
@@ -38,7 +38,10 @@ $app->group('/api', function () use ($app) {
     $app->get('/refresh-token', 'verifyTokenBearer', '\Auth\Controller\AuthController:refreshToken');
     $app->post('/create-user', 'verifyTokenBearer', '\Auth\Controller\AuthController:createUser');
 });
+
 $app->notFound(function () use ($app) {
     $app->response->setStatus(404);
     echo json_encode(array('code' => 404, 'message' => "The requested resource doesn't exist"));
 });
+
+return $app;

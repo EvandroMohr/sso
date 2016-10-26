@@ -1,4 +1,5 @@
-<?php namespace Auth\Model\Entity;
+<?php
+namespace Auth\Model\Entity;
 
 /**
  * Entity base for generic persistence

@@ -1,6 +1,5 @@
 <?php
-
-use GuzzleHttp\Client;
+$SLIM_WEB_TEST_OPTIONS['app_path'] = __DIR__ . '/../src/Routes/auth.php';
 
 /**
  * API Integration test suite
@@ -9,7 +8,7 @@ use GuzzleHttp\Client;
  * @author Evandro Mohr
  *
  */
-class IntegrationTest extends \PHPUnit_Framework_TestCase
+class IntegrationTest extends SlimTestCase\TestCase
 {
     
     protected $client;
@@ -17,15 +16,9 @@ class IntegrationTest extends \PHPUnit_Framework_TestCase
     
     public function setUp()
     {
-        $this->client = new Client(['base_uri' => 'http://192.168.0.125/']);
         $this->credentials = ['user' => '01481419196', 'passwd' => '12345678'];
     }
-    
-    public function tearDown()
-    {
-    }
-    
-    
+
     /**
      * @test
      */
@@ -38,11 +31,15 @@ class IntegrationTest extends \PHPUnit_Framework_TestCase
                 "passwd"=>time(),
                 "proxy"=>"jose.joao"
         ];
+
         $data = array("form_params"=>$this->credentials);
-        $response = $this->client->request('POST', 'auth/api/authenticate', ($data));
-        $data = json_decode($response->getBody(true));
+        $this->post('auth/authenticate', ($data));
+
+        $data = json_decode($this->response->getBody(true));
+
         $data1 = array("form_params"=>$usuario,'headers'=>array('Authorization' => "Bearer ".$data->token));
-        $response1 = $this->client->request('POST', 'auth/api/create-user', ($data1));
+        $response1 = $this->post('auth/api/create-user', ($data1));
+
         $data1 = json_decode($response1->getBody(true));
         $this->assertObjectHasAttribute('token', $data1);
         $this->assertNotNull($data1->token);
