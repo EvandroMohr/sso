@@ -8,9 +8,11 @@ use Exception;
  * @author Evandro Mohr
  *
  */
-class InvalidTokenException extends Exception {
-	
-	public function __construct($message){
-		parent::__construct($message);
-	}
+class InvalidTokenException extends Exception
+{
+    
+    public function __construct($message)
+    {
+        parent::__construct($message);
+    }
 }
