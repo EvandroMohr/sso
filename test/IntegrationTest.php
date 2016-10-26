@@ -16,7 +16,7 @@ class IntegrationTest extends SlimTestCase\TestCase
     
     public function setUp()
     {
-        $this->credentials = ['user' => '01481419196', 'passwd' => '12345678'];
+        $this->credentials = ['user' => '01234567890', 'passwd' => '12345678'];
     }
 
     /**
