@@ -2,6 +2,7 @@
 
 Unified system for authentication and authorization.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/848b8935a7d64916a012c69b2e523656)](https://www.codacy.com/app/mohr-evandro/sso?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EvandroMohr/sso&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/mrprompt/sso.svg?branch=master)](https://travis-ci.org/mrprompt/sso)
 
 
